@@ -18,7 +18,7 @@ Built for the Flip the Switch Hackathon (Track 01: Best Business Workflow).
 6. A person types `ship it`, and Gauntlet opens a GitHub PR for that branch.
 
 ```text
-Team room <-> Switch <-> @gauntlet, @codex-agent, @codex-b
+Team room <-> Switch <-> @gauntlet, @codex-agent, @claude-agent, @opencode-agent
                               |
                      one Git worktree per agent
                               |
@@ -59,7 +59,7 @@ demo-repo/.venv/bin/python gauntlet.py replay
 
 - `agent-cheat` is a **prepared** branch included to show cheat detection reliably. The live agents did not write it.
 - `replay-codex-agent` and `replay-codex-b` are saved results from a real race.
-- The current demo races two Codex agents.
+- The demo races three agent vendors against each other: OpenAI Codex, Anthropic Claude Code, and a free OpenCode model.
 
 ## Known limitations
 

@@ -12,7 +12,7 @@ REPO = ROOT / "demo-repo"
 WORKTREES = ROOT / "worktrees"
 REFEREE = ROOT / "referee" / "referee.py"
 PYTHON = REPO / ".venv" / "bin" / "python"
-AGENTS = ["codex-agent", "codex-b"]
+AGENTS = ["codex-agent", "claude-agent", "opencode-agent"]
 
 
 def branch_name(race, agent):
