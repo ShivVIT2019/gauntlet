@@ -6,7 +6,7 @@ Teams using AI coding agents need a better answer to "which one do we trust with
 
 Built for the Flip the Switch Hackathon (Track 01: Best Business Workflow).
 
-**Demo video:** VIDEO_LINK
+**Demo video:** https://youtu.be/-jGNKbCzvKI
 
 ## How it works
 
