@@ -58,7 +58,7 @@ demo-repo/.venv/bin/python gauntlet.py replay
 ## Demo disclosures
 
 - `agent-cheat` is a **prepared** branch included to show cheat detection reliably. The live agents did not write it.
-- `replay-codex-agent` and `replay-codex-b` are saved results from a real race.
+- `replay-codex-agent` and `replay-codex-b` are saved results from an earlier real race between two Codex agents.
 - The demo races three agent vendors against each other: OpenAI Codex, Anthropic Claude Code, and a free OpenCode model.
 
 ## Known limitations
