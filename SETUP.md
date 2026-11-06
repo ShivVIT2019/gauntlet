@@ -48,3 +48,8 @@ Then, after the scoreboard:
     @gauntlet ship it codex-agent
 
 Do not merge the PR. The demo needs the bug to stay in main.
+
+## Run without agents (replay mode)
+After step 2, this scores a recorded race. It needs no agent logins, API keys, or Switch:
+
+    demo-repo/.venv/bin/python gauntlet.py replay

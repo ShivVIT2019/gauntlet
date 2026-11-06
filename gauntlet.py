@@ -49,9 +49,16 @@ def ship(args):
     print(run("gh", "pr", "create", "--base", "main", "--head", branch, "--title", f"Gauntlet: ship {args.agent} fix", "--body", body), end="")
 
 
+def replay(_args):
+    run("git", "fetch", "-q", "origin")
+    branches = ["origin/replay-codex-agent", "origin/replay-codex-b", "origin/agent-cheat"]
+    print(run(str(PYTHON), str(REFEREE), "--repo", str(REPO), "--base", "origin/main", "--branches", *branches), end="")
+
+
 parser = argparse.ArgumentParser(description=__doc__)
 commands = parser.add_subparsers(required=True)
 commands.add_parser("start").set_defaults(func=start)
+commands.add_parser("replay").set_defaults(func=replay)
 score_parser = commands.add_parser("score")
 score_parser.add_argument("race")
 score_parser.add_argument("--include", nargs="*", default=[])
