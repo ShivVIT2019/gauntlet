@@ -144,8 +144,13 @@ def scoreboard(results):
     passing = [r for r in results if r["verdict"] == "PASS"]
     lines.append("")
     if passing:
-        best = min(passing, key=lambda r: r["lines_added"] + r["lines_deleted"])
-        lines.append(f"Smallest passing diff: **{best['branch']}**. Type `ship it` to approve it.")
+        size = lambda r: r["lines_added"] + r["lines_deleted"]
+        smallest = min(size(r) for r in passing)
+        best = [r["branch"] for r in passing if size(r) == smallest]
+        if len(best) == 1:
+            lines.append(f"Smallest passing diff: **{best[0]}**. Type `ship it` to approve it.")
+        else:
+            lines.append(f"Tied for smallest passing diff: **{', '.join(best)}**. Type `ship it <agent>` to choose.")
     else:
         lines.append("No branch passed.")
     return "\n".join(lines)

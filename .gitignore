@@ -1,3 +1,4 @@
 demo-repo/
 .venv/
 __pycache__/
+worktrees/
