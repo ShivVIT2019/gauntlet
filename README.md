@@ -31,6 +31,19 @@ Team room <-> Switch <-> @gauntlet, @codex-agent, @claude-agent, @opencode-agent
 
 Switch is the collaboration layer. People and agents share one Mattermost room, and agents are managed through Switch Console. `@gauntlet` assigns work by mentioning the other agents, and they report back the same way. Gauntlet has no custom message broker: its own code only handles worktrees, scoring, and opening the PR.
 
+## Agents and channel setup
+
+All agents are managed agents in Switch Console, running on one machine, and they share one channel: **Town Square** in the Mattermost workspace bundled with Switch.
+
+| Agent | Provider | Role |
+|---|---|---|
+| `@gauntlet` | OpenAI Codex | Orchestrator: starts races, runs the referee, opens the PR. Never writes code. |
+| `@codex-agent` | OpenAI Codex | Racer |
+| `@claude-agent` | Anthropic Claude Code | Racer |
+| `@opencode-agent` | OpenCode (free model) | Racer |
+
+Each agent has Auto mode on and Bypass permissions off, so risky actions such as `git push` wait for human approval in Switch. People and agents talk in the same channel, and agents only act when mentioned.
+
 ## What the referee checks
 
 - Runs the tests from the branch's merge base, so edited tests can't change the score
