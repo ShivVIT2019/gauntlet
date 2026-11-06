@@ -51,7 +51,7 @@ def ship(args):
 
 def replay(_args):
     run("git", "fetch", "-q", "origin")
-    branches = ["origin/replay-codex-agent", "origin/replay-codex-b", "origin/agent-cheat"]
+    branches = ["origin/replay-codex-agent", "origin/replay-claude-agent", "origin/replay-opencode-agent", "origin/agent-cheat"]
     print(run(str(PYTHON), str(REFEREE), "--repo", str(REPO), "--base", "origin/main", "--branches", *branches), end="")
 
 
